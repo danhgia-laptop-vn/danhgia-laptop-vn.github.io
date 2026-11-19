@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Foundry Local chỉ tốn 20 MB runtime để kéo AI về laptop</title>
+<meta name="description" content="Laptop phổ thông có tự chạy được mô hình AI độc lập mà không cần kết nối đám mây hay tốn phí token API? Foundry Local do Microsoft phát triển giải quyết...">
+<link rel="canonical" href="https://danhgia-laptop-vn.github.io/bai-viet/foundry-local-chi-ton-20-mb-runtime-de-keo-ai-ve-laptop/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css?v=b4223cae">
+<!--seo-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Foundry Local chỉ tốn 20 MB runtime để kéo AI về laptop">
+<meta property="og:description" content="Laptop phổ thông có tự chạy được mô hình AI độc lập mà không cần kết nối đám mây hay tốn phí token API? Foundry Local do Microsoft phát triển giải quyết...">
+<meta property="og:url" content="https://danhgia-laptop-vn.github.io/bai-viet/foundry-local-chi-ton-20-mb-runtime-de-keo-ai-ve-laptop/">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Sổ tay đánh giá laptop">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Foundry Local chỉ tốn 20 MB runtime để kéo AI về laptop", "description": "Laptop phổ thông có tự chạy được mô hình AI độc lập mà không cần kết nối đám mây hay tốn phí token API? Foundry Local do Microsoft phát triển giải quyết...", "datePublished": "2026-11-19", "dateModified": "2026-11-19", "inLanguage": "vi", "mainEntityOfPage": "https://danhgia-laptop-vn.github.io/bai-viet/foundry-local-chi-ton-20-mb-runtime-de-keo-ai-ve-laptop/", "author": {"@type": "Organization", "name": "Sổ tay đánh giá laptop"}, "publisher": {"@type": "Organization", "name": "Sổ tay đánh giá laptop"}}</script>
+<!--/seo-->
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua đến nội dung</a>
+<header class="top"><div class="wrap bar"><a class="brand" href="../../"><span class="mark" aria-hidden="true">R</span><span class="bn"><b>Sổ tay đánh giá laptop</b><small>Ghi chép của Khoa</small></span></a><nav class="nav" aria-label="Chính"><a href="../../">Trang chủ</a><a href="../../#chu-de-hop">Họp và làm việc</a><a href="../../#chu-de-chip">Chip và thông số</a><a href="../../#chu-de-may-cu">Máy tân trang</a><a href="../../#ve-blog">Về blog</a></nav></div></header>
+<div class="wrap lay"><main id="main" class="col post">
+<p class="crumb"><a href="../../">Trang chủ</a><span aria-hidden="true"> / </span><span>Chip và thông số</span></p>
+<article>
+
+
+
+<h1>Foundry Local chỉ tốn 20 MB runtime để kéo AI về laptop</h1>
+<p>Laptop phổ thông có tự chạy được mô hình AI độc lập mà không cần kết nối đám mây hay tốn phí token API?</p>
+<p>Foundry Local do Microsoft phát triển giải quyết đúng thắc mắc này. Đây là bộ runtime suy luận AI cục bộ, sử dụng ONNX Runtime để giao tiếp trực tiếp với CPU, GPU hoặc NPU của máy tính mà không đòi hỏi tài khoản Azure. Người dùng có thể tải về các dòng mô hình ngôn ngữ lớn như Qwen, DeepSeek, Mistral, Phi hoặc mô hình nhận diện giọng nói Whisper để xử lý công việc ngay trên máy.</p>
+<p>Gói runtime của công cụ chỉ tăng thêm khoảng 20 MB vào hệ thống. Mọi câu lệnh đầu vào và kết quả xử lý đều nằm trọn trong phần cứng cục bộ; kết nối mạng chỉ dùng ở lần đầu để kéo mô hình, tải thư viện tăng tốc phần cứng và đồng bộ dữ liệu. Sau bước nạp ban đầu, laptop ngắt mạng hoàn toàn vẫn tiếp tục tính toán bình thường từ bộ nhớ cache.</p>
+<h2 id="doi-chieu-foundry-local-voi-nhu-cau-dung-ai-cuc-bo">Đối chiếu Foundry Local với nhu cầu dùng AI cục bộ</h2>
+<p>| Nhu cầu người dùng | Trạng thái | Ghi nhận thực tế |</p>
+<p>| --- | --- | --- |</p>
+<p>| Chạy mô hình offline, không tốn phí | Đạt | Xử lý từ cache, không cần tài khoản Azure hay trả phí token |</p>
+<p>| Runtime nhẹ, tốn ít tài nguyên nền | Đạt | Gói suy luận ONNX Runtime chỉ chiếm thêm khoảng 20 MB |</p>
+<p>| Công bố ngưỡng phần cứng tối thiểu | Chưa đạt | Microsoft không đưa ra mức RAM hay ổ cứng sàn để vận hành |</p>
+<p>| Hỗ trợ quản lý vòng đời trọn vẹn | Chưa đạt | Bản CLI trên macOS chưa có tài liệu hướng dẫn gỡ cài đặt |</p>
+<p>Về cách thiết lập, Windows chỉ cần mở PowerShell quyền quản trị rồi chạy `winget install Microsoft.FoundryLocal`. Với macOS chạy chip Apple Silicon, thao tác thực hiện qua Homebrew bằng hai lệnh `brew tap microsoft/foundrylocal` và `brew install foundrylocal`. Trong các ghi chép thực nghiệm tại <a href="https://www.reviewlaptop.vn/foundry-local-tren-laptop-cai-dat-chon-mo-hinh/"><strong>ReviewLaptop</strong></a>, bộ công cụ này bám sát tầng tăng tốc phần cứng thông qua execution provider riêng cho từng vi xử lý để gánh tải thay vì ép CPU chạy đơn độc.</p>
+<p>Nhược điểm lớn nhất là bộ CLI này mới dừng ở bản xem trước (cli-preview-0.11.0), các tập lệnh có thể bị thay đổi bất ngờ ở những bản cập nhật tiếp theo. Microsoft hoàn toàn không công bố mức RAM hay dung lượng ổ cứng tối thiểu, buộc người dùng tự đo mức tiêu hao tài nguyên để phát hiện nghẽn cổ chai. Trên macOS, tài liệu còn bỏ ngỏ cách gỡ cài đặt sạch sẽ; người dùng từng cài bản cũ 0.8.x nếu muốn nâng cấp phải tự nhớ chạy lệnh `foundry service stop` trước khi cập nhật Homebrew. Ngoài ra, phần mềm vẫn ngầm giữ cơ chế gửi nhật ký sử dụng về máy chủ theo chính sách của hãng.</p>
+<p>Để kiểm soát tốt hiệu năng, người dùng nên ưu tiên tải các biến thể lượng tử hóa sâu như INT8 thay vì giữ mức FP16 khi dung lượng RAM eo hẹp. Nếu đưa vào máy các mô hình tinh chỉnh chứa dữ liệu nhạy cảm, việc bật mã hóa ổ đĩa (BitLocker trên Windows hoặc FileVault trên macOS) là bước bắt buộc phải làm để tránh rủi ro lộ dữ liệu từ tệp cache.</p>
+<p>Sự bất định về thông số phần cứng và việc thiếu hướng dẫn gỡ bỏ trên macOS là rào cản thực tế của Foundry Local lúc này. Cách thích ứng an toàn là chỉ đưa công cụ vào môi trường thử nghiệm, theo dõi chặt chẽ dung lượng RAM chiếm dụng ở lần chạy lệnh đầu tiên và kiên quyết chọn các bản mô hình nén INT8 để máy không bị đứng khi suy luận dài.</p>
+<p class="gia">Đăng ngày 19/11/2026</p>
+</article>
+<!--related-->
+<aside class="lq">
+<h2 class="lq-t">Bài cùng chủ đề</h2>
+<ul>
+<li><a href="../laptop-tan-trang-bao-hanh-serial-phan-mem-hang-doc-truoc-khi-mua/">Mua laptop tân trang - đọc kỹ bảo hành, số serial và phần mềm hãng</a></li>
+<li><a href="../doc-danh-gia-laptop-cho-nguoi-di-hop-webcam-micro-pin/">Đọc đánh giá laptop cho người hay họp video - webcam, micro, cảm biến</a></li>
+</ul>
+</aside>
+<!--/related-->
+</main>
+<aside class="side"><section class="w w-about"><span class="av" aria-hidden="true">K</span><div><h2 class="w-t">Khoa</h2><p>Mình ghi lại cách đọc đánh giá laptop, kèm bảng đối chiếu cho máy đời 2025 và 2026.</p><a class="more" href="../../#ve-blog">Về blog</a></div></section><section class="w w-cats"><h2 class="w-t">Chủ đề</h2><ul><li><a href="../../#chu-de-hop"><span>Họp và làm việc</span></a></li><li><a href="../../#chu-de-chip"><span>Chip và thông số</span></a></li><li><a href="../../#chu-de-may-cu"><span>Máy tân trang</span></a></li></ul></section></aside></div>
+<footer class="foot"><div class="wrap fo"><p><b>Sổ tay đánh giá laptop</b>, blog cá nhân của Khoa. Ghi chép đọc đánh giá laptop đời 2025 và 2026.</p><p class="sm">Nội dung viết lại từ tài liệu và kết quả đo công khai. Năm 2026.</p></div></footer>
+</body>
+</html>
