@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mdsched tiện nhưng bỏ sót lỗi RAM ẩn mà MemTest86 mới bắt được</title>
+<meta name="description" content="Mùa nâng cấp máy chuẩn bị cho đợt làm việc cao điểm cuối năm, nhiều người tá hỏa khi chiếc laptop đang chạy bỗng sập màn hình xanh. Thay vì vội cài lại hệ...">
+<link rel="canonical" href="https://danhgia-laptop-vn.github.io/bai-viet/mdsched-tien-nhung-bo-sot-loi-ram-an-ma-memtest86-moi-bat-duoc/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css?v=b4223cae">
+<!--seo-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mdsched tiện nhưng bỏ sót lỗi RAM ẩn mà MemTest86 mới bắt được">
+<meta property="og:description" content="Mùa nâng cấp máy chuẩn bị cho đợt làm việc cao điểm cuối năm, nhiều người tá hỏa khi chiếc laptop đang chạy bỗng sập màn hình xanh. Thay vì vội cài lại hệ...">
+<meta property="og:url" content="https://danhgia-laptop-vn.github.io/bai-viet/mdsched-tien-nhung-bo-sot-loi-ram-an-ma-memtest86-moi-bat-duoc/">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Sổ tay đánh giá laptop">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Mdsched tiện nhưng bỏ sót lỗi RAM ẩn mà MemTest86 mới bắt được", "description": "Mùa nâng cấp máy chuẩn bị cho đợt làm việc cao điểm cuối năm, nhiều người tá hỏa khi chiếc laptop đang chạy bỗng sập màn hình xanh. Thay vì vội cài lại hệ...", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "inLanguage": "vi", "mainEntityOfPage": "https://danhgia-laptop-vn.github.io/bai-viet/mdsched-tien-nhung-bo-sot-loi-ram-an-ma-memtest86-moi-bat-duoc/", "author": {"@type": "Organization", "name": "Sổ tay đánh giá laptop"}, "publisher": {"@type": "Organization", "name": "Sổ tay đánh giá laptop"}}</script>
+<!--/seo-->
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua đến nội dung</a>
+<header class="top"><div class="wrap bar"><a class="brand" href="../../"><span class="mark" aria-hidden="true">R</span><span class="bn"><b>Sổ tay đánh giá laptop</b><small>Ghi chép của Khoa</small></span></a><nav class="nav" aria-label="Chính"><a href="../../">Trang chủ</a><a href="../../#chu-de-hop">Họp và làm việc</a><a href="../../#chu-de-chip">Chip và thông số</a><a href="../../#chu-de-may-cu">Máy tân trang</a><a href="../../#ve-blog">Về blog</a></nav></div></header>
+<div class="wrap lay"><main id="main" class="col post">
+<p class="crumb"><a href="../../">Trang chủ</a><span aria-hidden="true"> / </span><span>Chip và thông số</span></p>
+<article>
+
+
+
+
+<h1>Mdsched tiện nhưng bỏ sót lỗi RAM ẩn mà MemTest86 mới bắt được</h1>
+<p>Mùa nâng cấp máy chuẩn bị cho đợt làm việc cao điểm cuối năm, nhiều người tá hỏa khi chiếc laptop đang chạy bỗng sập màn hình xanh. Thay vì vội cài lại hệ điều hành hay hấp tấp chi tiền mua linh kiện thay thế, bước xử lý đầu tiên là xác định xem bộ nhớ tạm có bị hỏng ô nhớ vật lý hay không.</p>
+<p>Cách giải quyết nhanh nhất là tận dụng công cụ tích hợp sẵn trên hệ thống: nhấn tổ hợp Windows + R, gõ lệnh `mdsched`, chọn khởi động lại máy để Windows Memory Diagnostic tự vận hành bài quét Standard. Khi máy trở lại màn hình đăng nhập, hệ thống sẽ gửi thông báo kết quả; nếu thông báo bị lỡ, bạn mở Event Viewer để tìm sự kiện Event ID 2001 đọc báo cáo.</p>
+<p>Trường hợp công cụ mặc định báo sạch nhưng hiện tượng văng ứng dụng vẫn tiếp diễn, giải pháp dứt điểm là boot USB MemTest86 phiên bản 11.7 qua chuẩn UEFI. Phần mềm này chạy độc lập ngoài hệ điều hành, rà đủ 4 pass mặc định và chỉ rõ chính xác địa chỉ ô nhớ hỏng thay vì chỉ đưa ra phán đoán chung chung.</p>
+<p>Chỗ này <a href="https://hungphatlaptop.com/lap-thanh-ram-thu-hai-cho-laptop-khac-bus/"><strong>Hưng Phát Laptop</strong></a> có phân tích riêng, đọc kèm sẽ rõ hơn vài chi tiết.</p>
+<h2 id="dau-hieu-man-hinh-xanh-nao-buoc-ban-phai-kiem-tra-ram">Dấu hiệu màn hình xanh nào buộc bạn phải kiểm tra RAM?</h2>
+<p>Theo tài liệu từ Microsoft Learn, mã lỗi MEMORY_MANAGEMENT (0x0000001A) chỉ rõ Windows gặp sự cố nghiêm trọng ở tầng quản lý bộ nhớ. Đây là căn cứ rõ ràng nhất để kiểm tra module RAM vật lý. Ngoài ra, mã lỗi 0xA (IRQL_NOT_LESS_OR_EQUAL) theo Microsoft Support cũng thường xuất phát từ driver xung đột hoặc bộ nhớ chập chờn. Dữ liệu ghi sai trên vài ô nhớ có thể làm hỏng tệp tin trên ổ cứng, do đó PassMark khuyến cáo nên rà soát ngay khi màn hình xanh lặp lại.</p>
+<h2 id="lenh-mdsched-co-san-lieu-co-du-tin-cay-de-chot-loi">Lệnh mdsched có sẵn liệu có đủ tin cậy để chốt lỗi?</h2>
+<p>Windows Memory Diagnostic tiện vì không cần USB ngoại vi, áp dụng được cho cả Windows 11 và Windows 10 (dù Windows 10 đã hết hạn hỗ trợ từ ngày 14/10/2025). Điểm trừ lớn là bài quét mặc định Standard chỉ rà lướt qua bề mặt nên rất dễ bỏ sót các lỗi ngắt quãng.</p>
+<p>Theo ghi nhận kiểm thử tại <a href="https://www.reviewlaptop.vn/kiem-tra-ram-laptop-windows-memtest86/"><strong>reviewlaptop.vn</strong></a>, nếu nghi ngờ phần cứng nhưng mdsched không phát hiện ra, bạn nên nhấn F1 khi màn hình kiểm tra vừa hiện lên, chuyển sang bộ Extended rồi nhấn F10 để quét sâu hơn. Nhược điểm thực tế là Microsoft không hề đưa ra mốc thời gian hoàn thành cụ thể, quá trình quét Extended kéo dài rất lâu và bạn buộc phải cắm sạc liên tục.</p>
+<h2 id="khi-nao-bat-buoc-phai-ton-cong-tao-usb-memtest86">Khi nào bắt buộc phải tốn công tạo USB MemTest86?</h2>
+<p>Bạn chỉ cần đến MemTest86 khi mdsched báo an toàn mà máy vẫn lỗi, hoặc khi cần bằng chứng chuẩn xác để đổi trả thanh RAM hỏng. Điểm mạnh của công cụ này là chạy hoàn toàn độc lập, không bị các tiến trình nền của Windows can thiệp.</p>
+<p>Tuy vậy, rào cản thực tế của MemTest86 bản 11.7 không nhỏ: phần mềm chỉ khởi động được trên chuẩn UEFI, đòi hỏi USB dung lượng trên 1 GB và cần một máy tính chạy Windows, Linux hoặc Mac chip Intel còn hoạt động bình thường để nạp bộ cài.</p>
+<h2 id="lam-sao-doc-lai-ket-qua-neu-thong-bao-chan-doan-bien-mat">Làm sao đọc lại kết quả nếu thông báo chẩn đoán biến mất?</h2>
+<p>Sau khi mdsched quét xong và máy tự khởi động lại, thông báo kết quả có khi mất vài phút mới hiện ở góc màn hình, hoặc biến mất nếu bạn vô tình bấm tắt. Lúc này, hãy nhấp chuột phải vào nút Start, mở Event Viewer và duyệt theo đường dẫn: Event Viewer (Local) &gt; Application and Services Logs &gt; Microsoft &gt; Windows &gt; MemoryDiagnostics-Results &gt; Debug để đọc chi tiết mã sự kiện Event ID 2001.</p>
+<h2 id="viec-can-lam-truoc-khi-xuong-tien-mua-thanh-ram-moi">Việc cần làm trước khi xuống tiền mua thanh RAM mới</h2>
+<ul>
+<li>Chạy trọn vẹn bộ Extended của mdsched hoặc hoàn thành đủ 4 pass trên MemTest86 để xác nhận kết quả FAIL rõ ràng, tránh mua nhầm linh kiện khi nguyên nhân thực tế chỉ do driver lỗi 0xA.</li>
+<li>Tháo rời từng thanh RAM và kiểm tra đơn lẻ trên từng khe cắm đối với laptop chạy hai thanh, nhằm khoanh vùng đúng thanh hỏng thay vì vội vàng thay cả cụm tốn kém.</li>
+<li>Chuẩn bị sẵn USB dung lượng trên 1 GB và xác nhận laptop nhận diện boot UEFI trước khi tạo công cụ cứu hộ ngoài hệ điều hành.</li>
+</ul>
+<p class="gia">Đăng ngày 24/11/2026</p>
+</article>
+<!--related-->
+<aside class="lq">
+<h2 class="lq-t">Bài cùng chủ đề</h2>
+<ul>
+<li><a href="../laptop-tan-trang-bao-hanh-serial-phan-mem-hang-doc-truoc-khi-mua/">Mua laptop tân trang - đọc kỹ bảo hành, số serial và phần mềm hãng</a></li>
+<li><a href="../doc-danh-gia-laptop-cho-nguoi-di-hop-webcam-micro-pin/">Đọc đánh giá laptop cho người hay họp video - webcam, micro, cảm biến</a></li>
+</ul>
+</aside>
+<!--/related-->
+</main>
+<aside class="side"><section class="w w-about"><span class="av" aria-hidden="true">K</span><div><h2 class="w-t">Khoa</h2><p>Mình ghi lại cách đọc đánh giá laptop, kèm bảng đối chiếu cho máy đời 2025 và 2026.</p><a class="more" href="../../#ve-blog">Về blog</a></div></section><section class="w w-cats"><h2 class="w-t">Chủ đề</h2><ul><li><a href="../../#chu-de-hop"><span>Họp và làm việc</span></a></li><li><a href="../../#chu-de-chip"><span>Chip và thông số</span></a></li><li><a href="../../#chu-de-may-cu"><span>Máy tân trang</span></a></li></ul></section></aside></div>
+<footer class="foot"><div class="wrap fo"><p><b>Sổ tay đánh giá laptop</b>, blog cá nhân của Khoa. Ghi chép đọc đánh giá laptop đời 2025 và 2026.</p><p class="sm">Nội dung viết lại từ tài liệu và kết quả đo công khai. Năm 2026.</p></div></footer>
+</body>
+</html>
