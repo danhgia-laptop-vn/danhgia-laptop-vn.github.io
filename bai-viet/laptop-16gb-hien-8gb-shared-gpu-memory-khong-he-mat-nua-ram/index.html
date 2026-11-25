@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Laptop 16GB hiện 8GB Shared GPU Memory không hề mất nửa RAM</title>
+<meta name="description" content="Mở Task Manager trên chiếc laptop 16GB không có card rời, nhiều người giật mình khi thấy dòng Shared GPU Memory báo tới 8GB. Cảm giác đầu tiên là máy bị...">
+<link rel="canonical" href="https://danhgia-laptop-vn.github.io/bai-viet/laptop-16gb-hien-8gb-shared-gpu-memory-khong-he-mat-nua-ram/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css?v=b4223cae">
+<!--seo-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Laptop 16GB hiện 8GB Shared GPU Memory không hề mất nửa RAM">
+<meta property="og:description" content="Mở Task Manager trên chiếc laptop 16GB không có card rời, nhiều người giật mình khi thấy dòng Shared GPU Memory báo tới 8GB. Cảm giác đầu tiên là máy bị...">
+<meta property="og:url" content="https://danhgia-laptop-vn.github.io/bai-viet/laptop-16gb-hien-8gb-shared-gpu-memory-khong-he-mat-nua-ram/">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Sổ tay đánh giá laptop">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Laptop 16GB hiện 8GB Shared GPU Memory không hề mất nửa RAM", "description": "Mở Task Manager trên chiếc laptop 16GB không có card rời, nhiều người giật mình khi thấy dòng Shared GPU Memory báo tới 8GB. Cảm giác đầu tiên là máy bị...", "datePublished": "2026-11-25", "dateModified": "2026-11-25", "inLanguage": "vi", "mainEntityOfPage": "https://danhgia-laptop-vn.github.io/bai-viet/laptop-16gb-hien-8gb-shared-gpu-memory-khong-he-mat-nua-ram/", "author": {"@type": "Organization", "name": "Sổ tay đánh giá laptop"}, "publisher": {"@type": "Organization", "name": "Sổ tay đánh giá laptop"}}</script>
+<!--/seo-->
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua đến nội dung</a>
+<header class="top"><div class="wrap bar"><a class="brand" href="../../"><span class="mark" aria-hidden="true">R</span><span class="bn"><b>Sổ tay đánh giá laptop</b><small>Ghi chép của Khoa</small></span></a><nav class="nav" aria-label="Chính"><a href="../../">Trang chủ</a><a href="../../#chu-de-hop">Họp và làm việc</a><a href="../../#chu-de-chip">Chip và thông số</a><a href="../../#chu-de-may-cu">Máy tân trang</a><a href="../../#ve-blog">Về blog</a></nav></div></header>
+<div class="wrap lay"><main id="main" class="col post">
+<p class="crumb"><a href="../../">Trang chủ</a><span aria-hidden="true"> / </span><span>Chip và thông số</span></p>
+<article>
+
+
+
+
+<h1>Laptop 16GB hiện 8GB Shared GPU Memory không hề mất nửa RAM</h1>
+<p>Mở Task Manager trên chiếc laptop 16GB không có card rời, nhiều người giật mình khi thấy dòng Shared GPU Memory báo tới 8GB. Cảm giác đầu tiên là máy bị chiếm mất nửa RAM cho đồ họa, trong khi tác vụ văn phòng vẫn giật cục nếu mở nhiều tab.</p>
+<p>Thực tế, con số 8GB đó chỉ là hạn mức tối đa mà Windows cho phép nhân đồ họa tích hợp (iGPU) mượn khi cần, không phải phần RAM bị khóa chết. Theo tài liệu từ Microsoft trên DirectX Developer Blog, Shared GPU Memory là RAM hệ thống thông thường mà cả CPU lẫn GPU đều dùng được.</p>
+<p>Intel cũng xác nhận trên trang FAQ rằng con số Shared System Memory không phải khoản giữ chỗ cố định. Nghĩa là khi bạn lướt web hay gõ văn bản, CPU vẫn dùng phần RAM này bình thường; chỉ khi chạy tác vụ đồ họa nặng, iGPU mới lấy thêm trong ngân sách 8GB đó.</p>
+<h2 id="doi-chieu-co-che-muon-ram-voi-nhu-cau-thuc-te">Đối chiếu cơ chế mượn RAM với nhu cầu thực tế</h2>
+<p>Để tách bạch giữa thông số hiển thị trên Task Manager và hiệu năng dùng thật, có thể đối chiếu hai cơ chế bộ nhớ của iGPU hiện nay:</p>
+<p>| Tình huống sử dụng | Cơ chế bộ nhớ liên quan | Đạt hay chưa đạt | Ghi chú thực tế |</p>
+<p>| --- | --- | --- | --- |</p>
+<p>| Máy 16GB chạy đa nhiệm văn phòng | Shared GPU Memory (~8GB) | Đạt | RAM không bị khóa sẵn, CPU vẫn dùng phần dư |</p>
+<p>| Phần mềm cũ đòi hỏi VRAM tối thiểu | Dedicated GPU memory (Intel báo 128 MB) | Chưa đạt nếu tin số ảo | Intel ghi nhận đây là con số ảo để tương thích |</p>
+<p>| Chạy đồ họa hoặc AI trên Ryzen AI 300 | Khối 512 MB riêng + ~50% RAM chia sẻ | Đạt mức cơ bản | Vẫn phụ thuộc tổng dung lượng RAM hệ thống |</p>
+<p>| Giữ RAM cứng từ firmware (UMA Frame Buffer) | Hardware reserved | Chưa đạt cho CPU | Phần giữ riêng càng lớn, RAM cho CPU càng hụt |</p>
+<p>Nhìn vào bảng trên, điểm dễ gây hiểu lầm nhất nằm ở mục <strong>Dedicated GPU memory</strong>. Trên card rời, đây là VRAM hàn riêng trên bo mạch với đường truyền độc lập. Còn trên iGPU, nó vẫn là RAM hệ thống được giữ riêng cho đồ họa.</p>
+<p>Với Intel, driver mặc định báo 128 MB Dedicated Video Memory nhưng chính hãng thừa nhận đây là con số ảo để phần mềm cũ nhận diện, không phải 128 MB VRAM thật. Trong khi đó, trên dòng Ryzen AI 300 của AMD, các chương trình thường dùng khối 512 MB dành riêng cho iGPU cộng thêm khoảng 50% RAM hệ thống.</p>
+<h2 id="nhuoc-diem-that-khi-igpu-chia-se-ram">Nhược điểm thật khi iGPU chia sẻ RAM</h2>
+<p>Dù cơ chế mượn linh hoạt giúp laptop mỏng nhẹ không cần gắn VRAM riêng, nhược điểm rõ nhất xuất hiện khi iGPU giữ một phần RAM ngay từ firmware trước lúc Windows khởi động. Theo ghi nhận từ Microsoft, vùng nhớ này vẫn là DRAM vật lý nhưng hệ điều hành mất quyền điều phối.</p>
+<p>Hệ quả là dung lượng RAM khả dụng bị hụt đi và hiện thẳng ở mục <strong>Hardware reserved</strong>. Phần giữ riêng cho iGPU càng lớn thì RAM còn lại cho CPU xử lý ứng dụng càng ít. Nếu muốn chỉnh lại mức cấp phát trên các đời chip mới, người dùng phải tìm đến <strong>Shared GPU Memory Override</strong> trên Intel Core Ultra Series 2 hoặc <strong>Variable Graphics Memory</strong> trên Ryzen AI 300, như phân tích chi tiết tại <a href="https://www.reviewlaptop.vn/shared-gpu-memory-laptop-igpu-muon-ram/"><strong>ReviewLaptop</strong></a> về cách Windows giới hạn bộ nhớ đồ họa.</p>
+<h2 id="cach-kiem-tra-nhanh-de-khong-bi-thong-so-danh-lua">Cách kiểm tra nhanh để không bị thông số đánh lừa</h2>
+<p>Thay vì lo lắng khi thấy Shared GPU Memory chiếm nửa dung lượng RAM trên laptop từ 32GB trở xuống, bạn nên kiểm tra theo thứ tự sau:</p>
+<ul>
+<li>Mở tab Performance trong Task Manager, xem mục <strong>Hardware reserved</strong> thay vì chỉ nhìn Shared GPU Memory để biết máy có đang bị khóa cứng RAM hay không.</li>
+<li>Không lấy con số 128 MB Dedicated GPU memory trên iGPU Intel làm thước đo sức mạnh đồ họa.</li>
+<li>Nếu thường xuyên chạy tác vụ nặng bằng iGPU, ưu tiên nâng tổng RAM hệ thống thay vì cố ép tăng phần giữ riêng, tránh làm CPU thiếu bộ nhớ.</li>
+</ul>
+<p>Quay lại tình huống mở Task Manager thấy 8GB Shared GPU Memory trên máy 16GB ban đầu: đó chỉ là trần mượn tối đa, không phải phần RAM đã mất. Thứ bạn cần canh chừng là mục Hardware reserved và tổng dung lượng RAM thực tế còn lại cho hệ thống.</p>
+<p class="gia">Đăng ngày 25/11/2026</p>
+</article>
+<!--related-->
+<aside class="lq">
+<h2 class="lq-t">Bài cùng chủ đề</h2>
+<ul>
+<li><a href="../laptop-tan-trang-bao-hanh-serial-phan-mem-hang-doc-truoc-khi-mua/">Mua laptop tân trang - đọc kỹ bảo hành, số serial và phần mềm hãng</a></li>
+<li><a href="../doc-danh-gia-laptop-cho-nguoi-di-hop-webcam-micro-pin/">Đọc đánh giá laptop cho người hay họp video - webcam, micro, cảm biến</a></li>
+</ul>
+</aside>
+<!--/related-->
+</main>
+<aside class="side"><section class="w w-about"><span class="av" aria-hidden="true">K</span><div><h2 class="w-t">Khoa</h2><p>Mình ghi lại cách đọc đánh giá laptop, kèm bảng đối chiếu cho máy đời 2025 và 2026.</p><a class="more" href="../../#ve-blog">Về blog</a></div></section><section class="w w-cats"><h2 class="w-t">Chủ đề</h2><ul><li><a href="../../#chu-de-hop"><span>Họp và làm việc</span></a></li><li><a href="../../#chu-de-chip"><span>Chip và thông số</span></a></li><li><a href="../../#chu-de-may-cu"><span>Máy tân trang</span></a></li></ul></section></aside></div>
+<footer class="foot"><div class="wrap fo"><p><b>Sổ tay đánh giá laptop</b>, blog cá nhân của Khoa. Ghi chép đọc đánh giá laptop đời 2025 và 2026.</p><p class="sm">Nội dung viết lại từ tài liệu và kết quả đo công khai. Năm 2026.</p></div></footer>
+</body>
+</html>
