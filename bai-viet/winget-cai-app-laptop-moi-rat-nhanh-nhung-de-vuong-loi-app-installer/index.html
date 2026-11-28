@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WinGet cài app laptop mới rất nhanh nhưng dễ vướng lỗi App Installer</title>
+<meta name="description" content="WinGet giúp cài hàng loạt phần mềm trên laptop mới chỉ bằng vài dòng lệnh mà không cần mở trình duyệt, nhưng ngay lúc vừa khui hộp máy lại rất dễ báo lỗi...">
+<link rel="canonical" href="https://danhgia-laptop-vn.github.io/bai-viet/winget-cai-app-laptop-moi-rat-nhanh-nhung-de-vuong-loi-app-installer/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css?v=b4223cae">
+<!--seo-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="WinGet cài app laptop mới rất nhanh nhưng dễ vướng lỗi App Installer">
+<meta property="og:description" content="WinGet giúp cài hàng loạt phần mềm trên laptop mới chỉ bằng vài dòng lệnh mà không cần mở trình duyệt, nhưng ngay lúc vừa khui hộp máy lại rất dễ báo lỗi...">
+<meta property="og:url" content="https://danhgia-laptop-vn.github.io/bai-viet/winget-cai-app-laptop-moi-rat-nhanh-nhung-de-vuong-loi-app-installer/">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Sổ tay đánh giá laptop">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "WinGet cài app laptop mới rất nhanh nhưng dễ vướng lỗi App Installer", "description": "WinGet giúp cài hàng loạt phần mềm trên laptop mới chỉ bằng vài dòng lệnh mà không cần mở trình duyệt, nhưng ngay lúc vừa khui hộp máy lại rất dễ báo lỗi...", "datePublished": "2026-11-28", "dateModified": "2026-11-28", "inLanguage": "vi", "mainEntityOfPage": "https://danhgia-laptop-vn.github.io/bai-viet/winget-cai-app-laptop-moi-rat-nhanh-nhung-de-vuong-loi-app-installer/", "author": {"@type": "Organization", "name": "Sổ tay đánh giá laptop"}, "publisher": {"@type": "Organization", "name": "Sổ tay đánh giá laptop"}}</script>
+<!--/seo-->
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua đến nội dung</a>
+<header class="top"><div class="wrap bar"><a class="brand" href="../../"><span class="mark" aria-hidden="true">R</span><span class="bn"><b>Sổ tay đánh giá laptop</b><small>Ghi chép của Khoa</small></span></a><nav class="nav" aria-label="Chính"><a href="../../">Trang chủ</a><a href="../../#chu-de-hop">Họp và làm việc</a><a href="../../#chu-de-chip">Chip và thông số</a><a href="../../#chu-de-may-cu">Máy tân trang</a><a href="../../#ve-blog">Về blog</a></nav></div></header>
+<div class="wrap lay"><main id="main" class="col post">
+<p class="crumb"><a href="../../">Trang chủ</a><span aria-hidden="true"> / </span><span>Chip và thông số</span></p>
+<article>
+
+
+
+
+<h1>WinGet cài app laptop mới rất nhanh nhưng dễ vướng lỗi App Installer</h1>
+<p>WinGet giúp cài hàng loạt phần mềm trên laptop mới chỉ bằng vài dòng lệnh mà không cần mở trình duyệt, nhưng ngay lúc vừa khui hộp máy lại rất dễ báo lỗi chưa nhận diện công cụ. Đây là trình quản lý gói dòng lệnh chính chủ Microsoft dành cho Windows 10 từ bản 1809 (build 17763), Windows 11 và Windows Server 2025.</p>
+<p>Nói thẳng vào câu hỏi nhiều người tìm kiếm: laptop Windows 11 có sẵn WinGet qua thành phần hệ thống App Installer, dùng để tìm, cài bằng `install --id` kèm `-e`, chép danh sách qua `export`/`import` file JSON và cập nhật toàn bộ bằng `upgrade --all`. Tuy nhiên, công cụ chỉ chạy sau lần đăng nhập đầu tiên khi Microsoft Store đăng ký ngầm xong.</p>
+<h2 id="winget-co-thuc-su-chay-ngay-khi-vua-mo-may-moi">WinGet có thực sự chạy ngay khi vừa mở máy mới?</h2>
+<p>Không hẳn. Tài liệu Microsoft Learn ghi nhận nếu gõ lệnh ngay sau màn hình thiết lập ban đầu, Windows có thể báo không tìm thấy vì tiến trình đăng ký ngầm chưa xong. Lúc đó bạn phải mở PowerShell chạy lệnh `Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe` để ép đăng ký thủ công.</p>
+<h2 id="kiem-tra-phien-ban-the-nao-de-tranh-loi-vat">Kiểm tra phiên bản thế nào để tránh lỗi vặt?</h2>
+<p>Mở Command Prompt hoặc PowerShell trên Windows Terminal rồi gõ `winget --version` (hoặc `-v`), máy cập nhật đủ sẽ báo từ bản ổn định 1.29.380 trở lên. Theo ghi nhận trên <a href="https://www.reviewlaptop.vn/winget-cai-ung-dung-laptop-moi-bang-dong-lenh/"><strong>ReviewLaptop</strong></a>, bước kiểm tra phiên bản này giúp loại trừ sớm tình trạng gõ lệnh xong im re do bản cũ dưới 1.6.3482 vẫn trỏ về CDN đã ngừng hoạt động.</p>
+<h2 id="cong-cu-nay-cai-duoc-nhung-dinh-dang-bo-cai-nao">Công cụ này cài được những định dạng bộ cài nào?</h2>
+<p>WinGet hỗ trợ khá rộng: EXE, ZIP, INNO, NULLSOFT, MSI, WIX, APPX, MSIX, BURN, PORTABLE và FONT. Riêng file EXE có hai chế độ `Silent` và `SilentWithProgress` để cài ngầm hoặc hiện thanh tiến trình. Nguồn tải lấy từ ba kho mặc định gồm `msstore`, kho cộng đồng Community Repository và kho phông chữ riêng.</p>
+<h2 id="gap-loi-khong-nhan-lenh-thi-xu-ly-ra-sao">Gặp lỗi không nhận lệnh thì xử lý ra sao?</h2>
+<p>Nhược điểm thực tế của WinGet nằm ở sự phụ thuộc vào App Installer, khiến người dùng mới dễ khựng lại vì bốn lỗi phổ biến:</p>
+<ul>
+<li><strong>Báo &quot;is not recognized&quot;</strong>: App Installer chưa vượt mốc 1.11.11451, cần chạy `Get-AppxPackage microsoft.desktopappinstaller` để kiểm tra và cập nhật từ Microsoft Store.</li>
+<li><strong>Đã cập nhật vẫn không chạy</strong>: Bí danh thực thi (App Execution Alias) đang tắt trong phần Apps &amp; features Settings.</li>
+<li><strong>Chỉ chạy khi gõ đủ đường dẫn</strong>: Biến môi trường PATH thiếu `%userprofile%\AppData\Local\Microsoft\WindowsApps`.</li>
+<li><strong>Hỏng gói hệ thống</strong>: Phải chạy `Get-AppxPackage Microsoft.DesktopAppInstaller | Reset-AppxPackage` trên Windows 11 để đặt lại.</li>
+</ul>
+<h2 id="checklist-4-buoc-thiet-lap-nhanh-tren-laptop-moi">Checklist 4 bước thiết lập nhanh trên laptop mới</h2>
+<ul>
+<li>Đăng nhập Windows, mở Terminal gõ `winget --version` và `winget --info` để kiểm tra bản 1.29.380 cùng thư mục nhật ký.</li>
+<li>Nếu gõ lệnh không phản hồi, cập nhật App Installer rồi chạy `winget source update`.</li>
+<li>Dùng file JSON kết hợp `import` để đổ toàn bộ phần mềm quen thuộc sang máy mới.</li>
+<li>Chạy `upgrade --all` định kỳ để vá lỗi phiên bản cũ.</li>
+</ul>
+<p>WinGet đáng dùng cho máy mới nhưng đòi hỏi người dùng biết tự xử lý lỗi App Installer.</p>
+<p class="gia">Đăng ngày 28/11/2026</p>
+</article>
+<!--related-->
+<aside class="lq">
+<h2 class="lq-t">Bài cùng chủ đề</h2>
+<ul>
+<li><a href="../laptop-tan-trang-bao-hanh-serial-phan-mem-hang-doc-truoc-khi-mua/">Mua laptop tân trang - đọc kỹ bảo hành, số serial và phần mềm hãng</a></li>
+<li><a href="../doc-danh-gia-laptop-cho-nguoi-di-hop-webcam-micro-pin/">Đọc đánh giá laptop cho người hay họp video - webcam, micro, cảm biến</a></li>
+</ul>
+</aside>
+<!--/related-->
+</main>
+<aside class="side"><section class="w w-about"><span class="av" aria-hidden="true">K</span><div><h2 class="w-t">Khoa</h2><p>Mình ghi lại cách đọc đánh giá laptop, kèm bảng đối chiếu cho máy đời 2025 và 2026.</p><a class="more" href="../../#ve-blog">Về blog</a></div></section><section class="w w-cats"><h2 class="w-t">Chủ đề</h2><ul><li><a href="../../#chu-de-hop"><span>Họp và làm việc</span></a></li><li><a href="../../#chu-de-chip"><span>Chip và thông số</span></a></li><li><a href="../../#chu-de-may-cu"><span>Máy tân trang</span></a></li></ul></section></aside></div>
+<footer class="foot"><div class="wrap fo"><p><b>Sổ tay đánh giá laptop</b>, blog cá nhân của Khoa. Ghi chép đọc đánh giá laptop đời 2025 và 2026.</p><p class="sm">Nội dung viết lại từ tài liệu và kết quả đo công khai. Năm 2026.</p></div></footer>
+</body>
+</html>
